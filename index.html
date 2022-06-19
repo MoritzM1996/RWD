@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Architekturbüro Pall I Falk | Architektur, Landschaftsarchitektur und Freiraumgestaltung</title>
+    <link href="//db.onlinewebfonts.com/c/800cd7ec4b1c0bedfa27eec5b57bb322?family=Fabriga+Light" rel="stylesheet"
+        type="text/css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="shortcut icon" type="x-icon" href="assets/img/brand/pall-falk.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header class="hero" id="hero">
+        <div class="spacing container">
+            <div class="hero__details">
+                <h1 class="hero__primary-title">pall I falk architekturbüro</h1>
+                <p class="hero__sub-title">Innovation und Tradition</p>
+                <a href="#products" class="btn hero__btn">Zu unseren Produkten</a>
+            </div>
+        </div>
+    </header>
+    <main>
+
+        <section class="center">
+            <div class="container green-btn spacing">
+                <h2 class="section-title">Über uns</h2>
+                <p class="featured__text">Wir glauben daran, dass sich die Dinge unauffällig entwickeln, sich Trends und
+                    Traditionen, das Bewährte und das Neue in ständigem Austausch miteinander befinden.</p>
+                <a href="#" class="btn">Mehr Informationen</a>
+            </div>
+        </section>
+
+        <section class="featured">
+            <div class="container spec">
+                <h2 class="section-title spec__title">Spezifikation</h2>
+                <div class="spec__video">
+                    <video id="timelapse" autoplay loop muted>
+                        <source src="assets/video/cube-berlin.mp4" type="video/mp4">
+                        <video>
+                </div>
+                <table class="spec__table">
+                    <tbody>
+                        <tr>
+                            <td class="spec__header">Grundfläche</td>
+                            <td class="spec__text">19.500 m²</td>
+                        </tr>
+                        <tr>
+                            <td class="spec__header">Vermietbare Nutzfläche</td>
+                            <td class="spec__text">17.000 m²</td>
+                        </tr>
+                        <tr>
+                            <td class="spec__header">Mietfläche pro Etage</td>
+                            <td class="spec__text">1.370 m²</td>
+                        </tr>
+                        <tr>
+                            <td class="spec__header">Geschosse</td>
+                            <td class="spec__text">11</td>
+                        </tr>
+                        <tr>
+                            <td class="spec__header">Kantenlänge</td>
+                            <td class="spec__text">42,5 m</td>
+                        </tr>
+                        <tr>
+                            <td class="spec__header">Höhe</td>
+                            <td class="spec__text">42,5 m</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="our-products">
+            <div class="container">
+                <h2 id="products" class="section-title">Unsere Produkte</h2>
+                <div class="grid">
+                    <img class="grid__img grid__img_col2" src="assets/img/Cube2_Philip-Gunkel001.jpg" alt="">
+                    <img class="grid__img" src="assets/img/cube-berlin-3xn-office-block_dezeen_2364_col_20.png" alt="">
+                    <img class="grid__img" src="assets/img/07_090_Cube_Berlin_024_H.jpg" alt="">
+                    <img class="grid__img" src="assets/img/423648_102421.jpg" alt="">
+                    <img class="grid__img" src="assets/img/pr280421-1500-0022.jpg" alt="">
+                    <img class="grid__img grid__img_col2" src="assets/img/07_090_Cube_Berlin_023_H.jpg" alt="">
+                    <img class="grid__img grid__img_col2"
+                        src="assets/img/cube-berlin-an-entirely-glass-clad-office-building-designed-by-3xn-in-washington-platz-germany-cube-berlin-designed-by-3xn-stirworld-200915063456_.jpg"
+                        alt="">
+                    <img class="grid__img" src="assets/img/423648_102421.jpg" alt="">
+                    <img class="grid__img" src="assets/img/Washingtonplatz.jpg" alt="">
+                </div>
+            </div>
+            <div class="popup center">
+                <span class="popup__close">&times;</span>
+                <img class="popup__img" src="assets/img/Cube2_Philip-Gunkel001.jpg" alt="">
+            </div>
+        </section>
+
+        <section class="center">
+            <div class="container green-btn spacing">
+                <h2 class="section-title">Kontakt</h2>
+                <p class="featured__text">Wenn Sie Interesse an unserer Arbeit haben, Sie Fragen zu Leistungen oder
+                    Projekten haben oder ein konkretes Bauvorhaben realisiert haben möchten; wir freuen uns auf das
+                    Gespräch mit Ihnen und eine vertrauensvolle Zusammenarbeit.</p>
+                <a href="#" class="btn">Kontakt aufnehmen</a>
+            </div>
+        </section>
+
+        <div class="footer">
+            <a href="#" class="footer__btn">Impressum</a>
+            <a href="#" class="footer__btn">Datenschutz</a>
+            <a href="#hero" class="footer__back_btn"><img src="assets/img/icons/chevron-up.png" alt=""></a>
+        </div>
+    </main>
+</body>
+
+<script>
+    document.querySelectorAll('.grid img').forEach(image => {
+        image.onclick = () => {
+            document.querySelector('.popup').style.display = "block";
+            document.querySelector('.popup img').src = image.getAttribute("src");
+            document.querySelector('body').style.overflow = "hidden";
+        }
+    });
+    document.querySelector(".popup span").onclick = () => {
+        document.querySelector('.popup').style.display = "none";
+        document.querySelector('body').style.overflow = "visible";
+    }
+
+    var myVideo = document.getElementById("timelapse");
+    document.querySelector(".spec__video").onclick = () => {
+        if (myVideo.paused)
+            myVideo.play();
+        else
+            myVideo.pause();
+    }
+</script>
+
+</html>
